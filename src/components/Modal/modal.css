@@ -18,5 +18,11 @@
 }
 
 .select-container {
-margin: 5em;
+margin-bottom: 5em;
+padding-top: 1.5em;
+}
+
+.select-label {
+    color:white;
+    font-size: 2em;
 }
