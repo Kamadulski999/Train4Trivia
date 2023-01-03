@@ -3,8 +3,8 @@ import './modal.css'
 
 function Modal() {
     return(
-        <div className="modal">
-            Modal goes here!!!!!
+        <div className="game-start">
+            <div className="text-danger color-me"> Hello World</div>
         </div>
     )
 }

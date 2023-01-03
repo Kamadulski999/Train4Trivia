@@ -1,12 +1,13 @@
-.modal {
+.game-start {
    
     height: 50%;
-    width: 40%;
-    background-color: white;
-    color: blue; 
+    width: 40%;        
     text-align:center;
     position: fixed;
     top:25%;
     right:30%;
     
+}
+.color-me {
+    background-color: aqua;
 }

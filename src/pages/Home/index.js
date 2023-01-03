@@ -2,6 +2,7 @@ import './home.css';
 import Modal from '../../components/Modal';
 
 
+
 const Home = () => {
 
     // gameOn is a placeholder for a state function to be added later. 
