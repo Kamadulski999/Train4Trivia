@@ -11,3 +11,12 @@
 .color-me {
     background-color: aqua;
 }
+
+.form-select {
+    width: 70%;
+    height: 2em;
+}
+
+.select-container {
+margin: 5em;
+}
