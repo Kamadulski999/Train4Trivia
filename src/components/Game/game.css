@@ -1,0 +1,13 @@
+.loading {
+    color: white;
+    font-size: 3em;
+    position: absolute;
+    top: 45%;
+    left: 45%;
+}
+
+.quit-game {
+    position: absolute;
+    top: 70%;
+    left: 47%;
+}

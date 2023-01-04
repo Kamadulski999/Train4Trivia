@@ -1,20 +1,32 @@
+import React, {useState} from 'react';
 import './home.css';
+import Game from '../../components/Game'
 import Modal from '../../components/Modal';
 
 
 
-const Home = () => {
-
-    // gameOn is a placeholder for a state function to be added later. 
-    // gameOn false will render the homepage modal. gameOn true will render the game modal.
-    const gameOn = true;
+const Home = ({gameOn, setGameOn}) => {
+   
     return (
         <>
         <div className="container">
           <div className="banner neonText">
             Trivia Trainer</div>           
         </div>
-        {gameOn && <Modal/>}
+        {/* display the landing page modal */}
+        {!gameOn && <Modal
+        gameOn={gameOn}
+        setGameOn={setGameOn}>
+        </Modal>}
+
+        {/* display the game modal */}
+        {gameOn && <Game
+        gameOn={gameOn}
+        setGameOn={setGameOn}>
+        </Game>}
+
+
+        
         </>
     )
 }
