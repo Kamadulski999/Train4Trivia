@@ -5,9 +5,8 @@ import Modal from '../../components/Modal';
 
 
 
-const Home = ({gameOn, setGameOn}) => {
-   
-    return (
+const Home = ({ gameOn, setGameOn, questions, setQuestions}) => {   
+       return (
         <>
         <div className="container">
           <div className="banner neonText">
@@ -16,13 +15,17 @@ const Home = ({gameOn, setGameOn}) => {
         {/* display the landing page modal */}
         {!gameOn && <Modal
         gameOn={gameOn}
-        setGameOn={setGameOn}>
+        setGameOn={setGameOn}
+        questions={questions}
+        setQuestions={setQuestions}>
         </Modal>}
 
         {/* display the game modal */}
         {gameOn && <Game
         gameOn={gameOn}
-        setGameOn={setGameOn}>
+        setGameOn={setGameOn}
+        questions={questions}
+        setQuestions={setQuestions}>
         </Game>}
 
 

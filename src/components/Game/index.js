@@ -1,13 +1,15 @@
 import React, {useState} from 'react';
 import './game.css';
 
-function Game({gameOn,setGameOn}) {
+function Game({gameOn,setGameOn, questions, setQuestions}) {
     const quitGame = () => {
         setGameOn(false)
     }
+   
 return (
+   
     <>
-    <div className="loading">Loading....</div>
+    {!questions && <div className="loading neonText">Loading....</div>}
     <div className="quit-game">
             <button type="button" onClick={quitGame} className="btn btn-primary">Quit Game</button>
             </div>

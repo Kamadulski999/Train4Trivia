@@ -1,18 +1,33 @@
 import React, {useState} from 'react';
 import './modal.css'
 
-function Modal({gameOn, setGameOn}) {
-    const startGame = () => {
-        console.log("click")
-        setGameOn(true)
+function Modal({  gameOn, setGameOn, questions, setQuestions}) {
+        
+      const fetchQuestions = (questions) => { 
+               var openTDBRequest = fetch("https://opentdb.com/api.php?amount=10&category=21").then(function(openTDBRequest){
+            openTDBRequest.json().then(function(data){             
+                setQuestions(data.results)              
+            })
+            .catch(function(error) {
+                console.log("Houston we have a problem")            
+            })    
+    })
+}
+      
+            
+        
+         
+        const startGame = () => {    
+        fetchQuestions(questions);         
+        setGameOn(true);
     }
     return(
         <div className="game-start">
-            <div className="select-label">
+            <div className="select-label neonText">
                 Choose your Category
             </div>
             <div className="select-container">
-            <select className="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
+            <select className="form-select form-select-lg mb-3" id="category">
             <option defaultValue>Categories</option>
             <option value="">Random</option>
             <option value="9">General Knowledge</option>
@@ -38,19 +53,14 @@ function Modal({gameOn, setGameOn}) {
             <option value="29">Comics</option>
             <option value="30">Gadgets</option>
             <option value="31">Anime and Manga</option>
-            <option value="32">Animation</option>
-
-
-            
-            
-            <option value="21">Sports and Liesure</option>            
+            <option value="32">Animation</option>         
             </select>             
             </div>
-            <div className="select-label">
+            <div className="select-label neonText">
                 Choose the Number of Questions
             </div>
             <div className="select-container">
-            <select className="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
+            <select className="form-select form-select-lg mb-3" id="number">
             <option defaultValue>Questions</option>
             <option value="5">5</option>
             <option value="10">10</option>
