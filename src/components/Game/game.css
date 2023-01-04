@@ -22,3 +22,24 @@
     top: 20%;
     left: 30%;
 }
+.question-container {
+    background-color: blue;
+    color: white;
+    height:50%;
+    width: 100%;
+}
+
+.answer-container {
+    display: flex;
+    background-color: red;
+    height: 50%;
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+.answer-btn {
+    background-color: azure;
+    color:black;
+    width: 50%;
+    height:50%;    
+}
