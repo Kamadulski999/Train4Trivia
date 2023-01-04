@@ -8,6 +8,17 @@
 
 .quit-game {
     position: absolute;
-    top: 70%;
+    top: 75%;
     left: 47%;
+}
+.game-modal {
+    height: 50%;
+    width: 40%;
+    background-color: white;
+    text-align: center;
+    color: blue;
+    font-size: 3em;
+    position: absolute;
+    top: 20%;
+    left: 30%;
 }

@@ -4,7 +4,9 @@ import './game.css';
 function Game({gameOn,setGameOn, questions, setQuestions}) {
     const quitGame = () => {
         setGameOn(false)
+        console.log(questions)
     }
+    
    
 return (
    
@@ -13,6 +15,7 @@ return (
     <div className="quit-game">
             <button type="button" onClick={quitGame} className="btn btn-primary">Quit Game</button>
             </div>
+    {questions && <div className="game-modal">question</div> }
     </>
 )
 }

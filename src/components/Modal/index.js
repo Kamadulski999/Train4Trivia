@@ -1,11 +1,12 @@
+import { number } from 'prop-types';
 import React, {useState} from 'react';
 import './modal.css'
 
-function Modal({  gameOn, setGameOn, questions, setQuestions}) {
+function Modal({  gameOn, setGameOn, questions, setQuestions}) { 
         
-      const fetchQuestions = (questions) => { 
-               var openTDBRequest = fetch("https://opentdb.com/api.php?amount=10&category=21").then(function(openTDBRequest){
-            openTDBRequest.json().then(function(data){             
+      const fetchQuestions = (questions) => {             
+               var openTDBRequest = fetch("https://opentdb.com/api.php?amount="+questionNumber.value+"&category="+category.value).then(function(openTDBRequest){
+            openTDBRequest.json().then(function(data){                          
                 setQuestions(data.results)              
             })
             .catch(function(error) {
@@ -17,9 +18,11 @@ function Modal({  gameOn, setGameOn, questions, setQuestions}) {
             
         
          
-        const startGame = () => {    
-        fetchQuestions(questions);         
+        const startGame = () => {
+        if(category.value && questionNumber.value) {            
+        fetchQuestions(questions);                             
         setGameOn(true);
+        }
     }
     return(
         <div className="game-start">
@@ -28,8 +31,7 @@ function Modal({  gameOn, setGameOn, questions, setQuestions}) {
             </div>
             <div className="select-container">
             <select className="form-select form-select-lg mb-3" id="category">
-            <option defaultValue>Categories</option>
-            <option value="">Random</option>
+            <option value="">Categories</option>            
             <option value="9">General Knowledge</option>
             <option value="10">Books</option>
             <option value="11">Film</option>
@@ -60,8 +62,8 @@ function Modal({  gameOn, setGameOn, questions, setQuestions}) {
                 Choose the Number of Questions
             </div>
             <div className="select-container">
-            <select className="form-select form-select-lg mb-3" id="number">
-            <option defaultValue>Questions</option>
+            <select className="form-select form-select-lg mb-3" id="questionNumber">
+            <option value="">Questions</option>
             <option value="5">5</option>
             <option value="10">10</option>
             <option value="20">20</option>       
