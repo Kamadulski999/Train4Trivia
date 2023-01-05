@@ -46,4 +46,13 @@
     font-size:0.5em!important;         
 }
 
+.question-counter {
+    height:4vh;
+    width: 30vw;
+    position: absolute;
+    font-size: 0.75em;
+    top: -5%;
+    right:15%;
+}
+
 

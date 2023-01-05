@@ -1,11 +1,14 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import './game.css';
+
+var correct = 0
 
 function Game({gameOn,setGameOn, questions, setQuestions}) {
     
     // counter determines the question that is displayed
     const [counter, setCounter] = useState(0)
-   
+
+      
     // reformat unicode escape characters from API
     function unEscape(htmlStr) {
         htmlStr = htmlStr.replace(/&lt;/g , "<");	 
@@ -15,15 +18,19 @@ function Game({gameOn,setGameOn, questions, setQuestions}) {
         htmlStr = htmlStr.replace(/&amp;/g , "&");
         htmlStr = htmlStr.replace(/&prime;/g , "\'");
         htmlStr = htmlStr.replace(/&Prime;/g , "\"");
-        htmlStr = htmlStr.replace(/&ldquo;;/g , "\"");
+        htmlStr = htmlStr.replace(/&ldquo;/g , "\"");
         htmlStr = htmlStr.replace(/&rdquo;/g , "\"");
+        htmlStr = htmlStr.replace(/&lsquo;/g , "\"");
+        htmlStr = htmlStr.replace(/&rsquo;/g , "\"");
+        htmlStr = htmlStr.replace(/&Eacute;/g , "E");
+        htmlStr = htmlStr.replace(/&eacute;/g , "e");
 
         return htmlStr;
     }  
     // questStr is the question string that will be displayed and the answerArr contains a randomized array of answers
     // the state determining which question is displayed is controlled by the question counter. As the user clicks on an answer
     // the checkAnswer function will be called to determine if the answer is correct and it will also increment the counter
-
+    
     var questStr = ""
     var answerArr = []
     if (questions) {
@@ -55,27 +62,32 @@ function Game({gameOn,setGameOn, questions, setQuestions}) {
           
             return array;
           }
-        shuffle(answerArr);       
+        shuffle(answerArr);     
         
         }
         
     const checkAnswer = (e) => {      
-
+    // check answer against questions.correct_answer. If button is correct display "CORRECT !", if wrong display correct answer
         if(e.target.innerText == questions[counter].correct_answer) {
-            console.log("Correct")
-        }  else {
-            console.log("Wrong")
+           correct = correct + 1
+           e.target.innerText = "Correct ! "
+           console.log(correct)
+           } else {
+            e.target.innerText = "The Answer is " + unEscape(questions[counter].correct_answer)
         };
-                   
-        if(counter < questions.length-1){
+
+        setTimeout(function() {
+            if(counter < questions.length-1){
         setCounter(counter + 1);
         } else {
             quitGame()
         }
+    }, 2000);
     }
 
     const quitGame = () => {
-        setGameOn(false)        
+        setGameOn(false)
+        correct = 0        
     }                  
   
     return (   
@@ -85,19 +97,21 @@ function Game({gameOn,setGameOn, questions, setQuestions}) {
     
     {/* after fetch show questions */}
     {questions && <div className="game-modal">
-        <div className="question-container neonText">{questStr}</div>
+        <div className="question-container neonText">{questStr.slice(1, -1)}</div>
         <div className='answer-container'>
             {answerArr.map((answer, index)=>{
                 return (
                     <div className="answer-btn" key={index}><button type="button" onClick={checkAnswer} className="btn answer neonBtn">{unEscape(answer)}</button></div>  
                 )
             })}           
-        </div> 
+        </div>
+        <div className="question-counter neonText"> Question: {counter + 1} / {questions.length} &nbsp; &nbsp; Correct: {correct}</div> 
     </div> 
     }
+  
     <div className="quit-game">
-            <button type="button" onClick={quitGame} className="btn neonBtn">Quit Game</button>
-            </div>
+        <button type="button" onClick={quitGame} className="btn neonBtn">Quit Game</button>
+    </div>
     </>
 )
 }

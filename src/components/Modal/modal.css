@@ -12,6 +12,7 @@
 .form-select {
     width: 70%;
     height: 2em;
+    background-color: rgb(253, 253, 253);
 }
 
 .select-container {
@@ -23,3 +24,4 @@ padding-top: 1.5em;
     color:white;
     font-size: 2em;
 }
+
