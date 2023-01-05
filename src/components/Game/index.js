@@ -15,15 +15,50 @@ function Game({gameOn,setGameOn, questions, setQuestions}) {
         htmlStr = htmlStr.replace(/&amp;/g , "&");
         return htmlStr;
     }  
-    
+    // questStr is the question string that will be displayed and the answerArr contains a randomized array of answers
+    // the state determining whihc question is displayed is controlled by the question counter. As the user clicks on an answer
+    // the checkAnswer function will be called to determine if the answer is correct and it will also increment the counter
+
     var questStr = ""
+    var answerArr = []
     if (questions) {
-        questStr = unEscape(JSON.stringify(questions[counter].question))             
+        // retrieve question at the index of questions[counter] and run it through unEscape 
+        // function to get rid of escape charter formatting then set result to questStr variable
+        questStr = unEscape(JSON.stringify(questions[counter].question));
+
+        // API returns an object with a correct_answer key:value pair where the correct answer is a single value
+        // and the incorrect_answers key:value pair has a value that is an array with multiple answer strings
+        // add the correct and incorrect answers to the answerArr
+        answerArr.push(...questions[counter].incorrect_answers)
+        answerArr.push(questions[counter].correct_answer)
+        console.log(answerArr)
+
+        // Fisher-Yates Shuffle of answerArr to randomize
+        function shuffle(array) {
+            let currentIndex = array.length,  randomIndex;
+          
+            // While there remain elements to shuffle.
+            while (currentIndex != 0) {
+          
+              // Pick a remaining element.
+              randomIndex = Math.floor(Math.random() * currentIndex);
+              currentIndex--;
+          
+              // And swap it with the current element.
+              [array[currentIndex], array[randomIndex]] = [
+                array[randomIndex], array[currentIndex]];
+            }
+          
+            return array;
+          }
+        shuffle(answerArr);
+        console.log(answerArr)
+        
         }
         
     const checkAnswer = () => {
-        setCounter(counter + 1)
-        console.log(counter)
+        setCounter(counter + 1);
+        console.log(questions[counter]);
     }
 
     const quitGame = () => {
@@ -37,17 +72,17 @@ function Game({gameOn,setGameOn, questions, setQuestions}) {
     
     {/* after fetch show questions */}
     {questions && <div className="game-modal">
-        <div className="question-container">{questStr}</div>
+        <div className="question-container neonText">{questStr}</div>
         <div className='answer-container'>
-            <div className="answer-btn"><button type="button" onClick={checkAnswer} className="btn btn-primary">Answer 1</button></div>
-            <div className="answer-btn"><button type="button" onClick={checkAnswer} className="btn btn-primary">Answer 2</button></div>
-            <div className="answer-btn"><button type="button" onClick={checkAnswer} className="btn btn-primary">Answer 3</button></div>
-            <div className="answer-btn"><button type="button" onClick={checkAnswer} className="btn btn-primary">Answer 4</button></div>
+            <div className="answer-btn"><button type="button"  onClick={checkAnswer} className="btn answer neonBtn">Answer 1</button></div>
+            <div className="answer-btn"><button type="button" onClick={checkAnswer} className="btn answer neonBtn">Answer 2</button></div>
+            <div className="answer-btn"><button type="button" onClick={checkAnswer} className="btn answer neonBtn">Answer 3</button></div>
+            <div className="answer-btn"><button type="button" onClick={checkAnswer} className="btn answer neonBtn">Answer 4</button></div>
         </div> 
     </div> 
     }
     <div className="quit-game">
-            <button type="button" onClick={quitGame} className="btn btn-primary">Quit Game</button>
+            <button type="button" onClick={quitGame} className="btn neonBtn">Quit Game</button>
             </div>
     </>
 )
