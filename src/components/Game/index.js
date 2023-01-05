@@ -15,10 +15,13 @@ function Game({gameOn,setGameOn, questions, setQuestions}) {
         htmlStr = htmlStr.replace(/&amp;/g , "&");
         htmlStr = htmlStr.replace(/&prime;/g , "\'");
         htmlStr = htmlStr.replace(/&Prime;/g , "\"");
+        htmlStr = htmlStr.replace(/&ldquo;;/g , "\"");
+        htmlStr = htmlStr.replace(/&rdquo;/g , "\"");
+
         return htmlStr;
     }  
     // questStr is the question string that will be displayed and the answerArr contains a randomized array of answers
-    // the state determining whihc question is displayed is controlled by the question counter. As the user clicks on an answer
+    // the state determining which question is displayed is controlled by the question counter. As the user clicks on an answer
     // the checkAnswer function will be called to determine if the answer is correct and it will also increment the counter
 
     var questStr = ""
@@ -56,7 +59,14 @@ function Game({gameOn,setGameOn, questions, setQuestions}) {
         
         }
         
-    const checkAnswer = () => {        
+    const checkAnswer = (e) => {      
+
+        if(e.target.innerText == questions[counter].correct_answer) {
+            console.log("Correct")
+        }  else {
+            console.log("Wrong")
+        };
+                   
         if(counter < questions.length-1){
         setCounter(counter + 1);
         } else {
