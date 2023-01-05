@@ -74,10 +74,11 @@ function Game({gameOn,setGameOn, questions, setQuestions}) {
     {questions && <div className="game-modal">
         <div className="question-container neonText">{questStr}</div>
         <div className='answer-container'>
-            <div className="answer-btn"><button type="button"  onClick={checkAnswer} className="btn answer neonBtn">Answer 1</button></div>
-            <div className="answer-btn"><button type="button" onClick={checkAnswer} className="btn answer neonBtn">Answer 2</button></div>
-            <div className="answer-btn"><button type="button" onClick={checkAnswer} className="btn answer neonBtn">Answer 3</button></div>
-            <div className="answer-btn"><button type="button" onClick={checkAnswer} className="btn answer neonBtn">Answer 4</button></div>
+            {answerArr.map((answer, index)=>{
+                return (
+                    <div className="answer-btn" key={index}><button type="button" onClick={checkAnswer} className="btn answer neonBtn">{answer}</button></div>  
+                )
+            })}           
         </div> 
     </div> 
     }

@@ -36,11 +36,12 @@
 .answer-btn {    
     color:black;
     width: 50%;
-    height:50%;    
+    height:50%;      
 }
 
 .answer {
     width: 90%;
+    font-size:0.5em!important;    
 }
 
 .neonBtn {
