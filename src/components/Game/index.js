@@ -13,6 +13,8 @@ function Game({gameOn,setGameOn, questions, setQuestions}) {
         htmlStr = htmlStr.replace(/&quot;/g , "\"");  
         htmlStr = htmlStr.replace(/&#039;/g , "\'");   
         htmlStr = htmlStr.replace(/&amp;/g , "&");
+        htmlStr = htmlStr.replace(/&prime;/g , "\'");
+        htmlStr = htmlStr.replace(/&Prime;/g , "\"");
         return htmlStr;
     }  
     // questStr is the question string that will be displayed and the answerArr contains a randomized array of answers
@@ -30,9 +32,8 @@ function Game({gameOn,setGameOn, questions, setQuestions}) {
         // and the incorrect_answers key:value pair has a value that is an array with multiple answer strings
         // add the correct and incorrect answers to the answerArr
         answerArr.push(...questions[counter].incorrect_answers)
-        answerArr.push(questions[counter].correct_answer)
-        console.log(answerArr)
-
+        answerArr.push(questions[counter].correct_answer)      
+                      
         // Fisher-Yates Shuffle of answerArr to randomize
         function shuffle(array) {
             let currentIndex = array.length,  randomIndex;
@@ -51,14 +52,16 @@ function Game({gameOn,setGameOn, questions, setQuestions}) {
           
             return array;
           }
-        shuffle(answerArr);
-        console.log(answerArr)
+        shuffle(answerArr);       
         
         }
         
-    const checkAnswer = () => {
+    const checkAnswer = () => {        
+        if(counter < questions.length-1){
         setCounter(counter + 1);
-        console.log(questions[counter]);
+        } else {
+            quitGame()
+        }
     }
 
     const quitGame = () => {
@@ -76,7 +79,7 @@ function Game({gameOn,setGameOn, questions, setQuestions}) {
         <div className='answer-container'>
             {answerArr.map((answer, index)=>{
                 return (
-                    <div className="answer-btn" key={index}><button type="button" onClick={checkAnswer} className="btn answer neonBtn">{answer}</button></div>  
+                    <div className="answer-btn" key={index}><button type="button" onClick={checkAnswer} className="btn answer neonBtn">{unEscape(answer)}</button></div>  
                 )
             })}           
         </div> 

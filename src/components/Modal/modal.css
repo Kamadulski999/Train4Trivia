@@ -1,5 +1,5 @@
 .game-start {
-   
+    padding-top: 1.5%;
     height: 50%;
     width: 40%;        
     text-align:center;
@@ -7,9 +7,6 @@
     top:25%;
     right:30%;
     
-}
-.color-me {
-    background-color: aqua;
 }
 
 .form-select {

@@ -71,7 +71,7 @@ function Modal({  gameOn, setGameOn, questions, setQuestions}) {
             </select> 
             </div>
             <div className="start-button">
-            <button type="button" onClick={startGame} className="btn btn-primary">Start Training!</button>
+            <button type="button" onClick={startGame} className="btn neonBtn">Start Training!</button>
             </div>
         </div>
     )

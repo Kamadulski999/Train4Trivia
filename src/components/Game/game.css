@@ -15,52 +15,35 @@
     height: 50%;
     width: 40%;    
     text-align: center;   
-    font-size: 3em;
+    font-size: 2em;
     position: absolute;
     top: 20%;
     left: 30%;
 }
 .question-container {    
     color: white;
-    height:50%;
+    padding-top: 5%;
+    height:55%;
     width: 100%;
 }
 
 .answer-container {
     display: flex;    
-    height: 50%;
+    height: 40%;
     width: 100%;
     flex-wrap: wrap;
 }
 
 .answer-btn {    
     color:black;
-    width: 50%;
-    height:50%;      
+    width: 100%;
+    height:35%; 
+    margin:1%;          
 }
 
 .answer {
     width: 90%;
-    font-size:0.5em!important;    
+    font-size:0.5em!important;         
 }
 
-.neonBtn {
-    /* background-color: blue;     */
-        margin-left: 3em;        
-        color: rgb(3, 1, 36);
-        border: 3px solid #0fa;
-        border-radius:15px;
-        font-size: 15px;
-        font-family: tahoma;
-        letter-spacing:3px;
-        cursor: pointer;
-        font-weight: bold;
-        filter: drop-shadow(0 0 6px #0fa) drop-shadow(0 0 15px #0fa) contrast(2) brightness(2);
-        transition: .5s;
-      }
-      
-      .button:hover {
-        color: black;
-        background-color: #0fa;
-        filter: drop-shadow(0 0 20px #0fa) contrast(2) brightness(2);
-      }
+
