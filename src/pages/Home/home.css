@@ -2,7 +2,7 @@
 
 .container {
     height: 100vh;   
-    background: url(/images/AdobeStock_256640090.jpeg) no-repeat fixed center;   
+    background: img src="/images/AdobeStock_256640090.jpeg" alt="" no-repeat fixed center;   
     background-size: 80%;    
   }
 
