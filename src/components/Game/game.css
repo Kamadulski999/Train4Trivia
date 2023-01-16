@@ -83,14 +83,22 @@
 @media (max-width: 600px) {
     .question-container {
         font-size: 3rem;
-    }
-}
+    
 
-@media (max-width: 400px) {
     .answer-btn {
         margin-left: 0;
         width: 100%;
     }
-    }
+        .question-counter {
+            font-size: 0.35em
+        }
+        }
+    
+        @media (max-width: 400px) {
+            .quit-game {
+                top: 75%;
+            }
+}
+
 
 
