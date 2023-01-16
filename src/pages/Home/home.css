@@ -4,7 +4,7 @@
     height: 100vh;
     width: 100vw; 
     background-image: url("/public/images/NeonBricks.png");
-    background-size: 110vw;  
+    background-size: 90vw;  
     background-position: center;
     background-repeat: no-repeat;      
     display: flex;
@@ -17,7 +17,7 @@
 .banner {   
  position: absolute; 
  top: 10%;
- font-size: 12rem;       
+ font-size: 10rem;       
   }
 
   .start-button {

@@ -22,6 +22,10 @@ font-size: 2em;
     font-size: 4em;
 }
 
+.start-modal {
+    font-size: 1rem;
+}
+
 
 @media (max-width: 400px) {
     .form-select {
