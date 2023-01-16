@@ -76,7 +76,7 @@
 
 @media (max-width: 900px) {
     .question-container {
-        font-size: 4rem'
+        font-size: 4rem;
     }
 }
 
@@ -92,5 +92,5 @@
         width: 100%;
     }
     }
-}
+
 
