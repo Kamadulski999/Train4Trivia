@@ -1,9 +1,7 @@
 .game-start {         
     text-align:center;
     position: fixed;  
-    font-size: 1.75rem;
-
-}
+    }
 
 .form-select {
     width: 70%;
