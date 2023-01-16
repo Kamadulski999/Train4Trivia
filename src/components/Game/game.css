@@ -59,7 +59,7 @@
 }
 
 
-    @media (max-width: 1300px) {
+    @media (max-width: 1333px) {
         .answer-btn { 
             width: 50%;
             height:35%; 
@@ -68,37 +68,12 @@
         .quit-game {
             padding:0;
         }
+        .question-counter {
+            font-size: 0.5em
+        }
 }
 
-@media (max-width: 900px) {
 
-    .question-counter {    
-        font-size: 0.5em;      
-    }
-
-    .answer-btn { 
-        width: 100%;
-        height:35%;        
-        font-size: 3rem;
-    }
-
-    .quit-game {
-        padding:0;
-    }
-
-    .question-container {      
-        padding: 8rem 0 0 0;
-        height:60%;
-        width: 100%;
-        font-size: 3.5rem;
-    }
-
-    .answer-container {    
-        width: 150%;
-        position: absolute;
-        left: -45%;    
-    }    
-}
 
 @media (max-width: 600px) {
     .question-counter {    

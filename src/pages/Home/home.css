@@ -25,6 +25,12 @@
     right:43%;
     bottom: 12.5%;
   }
+  @media (max-width: 1333px)
+  {
+    .container {
+      background-image: url("/public/images/NeonBricks2.png");
+    }
+  }
 
 @media (max-width: 600px) {
    .banner {
