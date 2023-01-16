@@ -83,7 +83,7 @@
 @media (max-width: 600px) {
     .question-container {
         font-size: 3rem;
-    
+    }
 
     .answer-btn {
         margin-left: 0;
@@ -92,7 +92,7 @@
         .question-counter {
             font-size: 0.35em
         }
-        }
+    }
     
         @media (max-width: 400px) {
             .quit-game {
