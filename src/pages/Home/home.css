@@ -2,8 +2,7 @@
 
 .container {
     height: 100vh;
-    width: 100vw;   
-    position: fixed;      
+    width: 100vw; 
     background-image: url("/public/images/NeonBricks.png");
     background-size: 90vw;  
     background-position: center;
@@ -12,15 +11,17 @@
     align-items: center;
     justify-content: center;
   }
-  .start-modal {   
+
+.start-modal {   
     display: flex;
     justify-content: center;
-    align-items: center;    
+    align-items: center;  
+    text-align: center;  
   }
 
-  .banner {   
- position: fixed; 
- top:1%;
+.banner {   
+ position: absolute; 
+ top:0;
  font-size: 7rem;       
   }
   

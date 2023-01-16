@@ -1,6 +1,7 @@
 .game-start {         
     text-align:center;
-    position: fixed;  
+    position: relative;
+    right: 25em;  
     }
 
 .form-select {
