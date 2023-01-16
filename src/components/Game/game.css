@@ -52,10 +52,10 @@
 .question-counter {
     height:4vh;
     width: 30vw;
-    position: absolute;
+    position: fixed;
     font-size: 0.75em;
-    left: 25%;
-    top: -49%;
+    left: 33%;
+    top: 1.5%;
 }
 
 
