@@ -31,6 +31,10 @@
       background-image: url("/public/images/NeonBricks2.png");
       background-size: 200vw;
     }
+
+    .start-button {
+      right: 40%;
+    }
   }
 
 @media (max-width: 600px) {

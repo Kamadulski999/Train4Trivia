@@ -96,8 +96,19 @@
     
         @media (max-width: 400px) {
             .quit-game {
-                top: 75%;
+                top: 50%;
             }
+            .answer {
+                font-size: 0.35em;
+            }
+            .question-container {
+                font-size: 2rem;
+            }
+
+            .start-button {
+                right: auto;
+            }
+
 }
 
 
