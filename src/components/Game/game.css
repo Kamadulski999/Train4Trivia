@@ -11,21 +11,22 @@
     top: 90%;
     left: 43%;
 }
-.game-modal {
-    height: 50%;
-    width: 40%;    
+
+.game-modal {             
     text-align: center;   
-    font-size: 2em;
+    font-size: 3em;
     position: absolute;
-    top: 20%;
-    left: 30%;
+    width: 80%;
+    top: 25%;
+    left: 15%;
 }
+
 .question-container {    
     color: white;
     padding-top: 5vh;    
     height:55%;
-    width: 90%;
-    font-size: 5rem;
+    width: 65%;
+    font-size: 4rem;
 }
 
 .answer-container {
@@ -37,9 +38,9 @@
 
 .answer-btn {    
     color:black;
-    width: 80%;
+    width: 70%;
     height:35%; 
-    margin-left: 7rem;              
+    margin-left: 10rem;              
 }
 
 .answer {
@@ -52,30 +53,14 @@
     width: 30vw;
     position: absolute;
     font-size: 0.75em;
-    top: 3%;
-    right:15%;
+    left: 25%;
+    top: -45%;
 }
 
 .quit-game {
     padding-left:5rem;  
 }
 
-@media (max-width: 2000px) {
-    .question-counter {
-        top:-15%;
-        left: 25%;
-    }
-
-    
-    .game-modal {       
-        width: 80%;    
-        text-align: center;   
-        font-size: 3em;
-        position: absolute;
-        top: 25%;
-        left: 15%;
-    }
-}
     @media (max-width: 1300px) {
         .answer-btn { 
             width: 50%;
