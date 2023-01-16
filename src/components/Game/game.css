@@ -21,11 +21,11 @@
     left: 30%;
 }
 .question-container {    
-    color: white;   
-    padding: 8rem 0 0 15rem;
+    color: white;
+    padding-top: 5vh;    
     height:55%;
-    width: 80%;
-    font-size: 3.5rem;
+    width: 90%;
+    font-size: 5rem;
 }
 
 .answer-container {
@@ -52,7 +52,7 @@
     width: 30vw;
     position: absolute;
     font-size: 0.75em;
-    top: 2%;
+    top: 3%;
     right:15%;
 }
 
