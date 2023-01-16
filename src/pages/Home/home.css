@@ -1,13 +1,41 @@
 
 
 .container {
-    height: 100vh;   
-    background: img src="/images/AdobeStock_256640090.jpeg" alt="" no-repeat fixed center;   
-    background-size: 80%;    
+    height: 100vh;
+    width: 100vw;   
+    position: fixed;      
+    background-image: url("/public/images/AdobeStock_256640090.jpeg");
+    background-size: 70vw;  
+    background-position: center;
+    background-repeat: no-repeat;      
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .start-modal {   
+    display: flex;
+    justify-content: center;
+    align-items: center;    
   }
 
-  .banner {
-   text-align:center;
-   font-size: 5em;    
+  .banner {   
+ position: fixed; 
+ top:1%;
+ font-size: 10rem;       
   }
   
+  @media (max-width: 1875px) {
+  .container {
+    background-image: url("/public/images/NeonBricks.png");
+    background-size: 130vh;
+  }
+  }
+
+  @media (max-width: 600px) {
+   .banner {
+    font-size: 5rem;
+   }
+    }
+
+   
+       

@@ -8,17 +8,19 @@ import Modal from '../../components/Modal';
 const Home = ({ gameOn, setGameOn, questions, setQuestions}) => {   
        return (
         <>
-        <div className="container">
-          <div className="banner neonText">
-            Trivia Trainer</div>           
-        </div>
-        {/* display the landing page modal */}
+      
+        <div className="container">  
+        <div className="banner neonText">
+            Trivia Trainer</div>         
+            {/* display the landing page modal */}
+        <div className="start-modal">
         {!gameOn && <Modal
         gameOn={gameOn}
         setGameOn={setGameOn}
         questions={questions}
         setQuestions={setQuestions}>
         </Modal>}
+        </div>
 
         {/* display the game modal */}
         {gameOn && <Game
@@ -26,7 +28,9 @@ const Home = ({ gameOn, setGameOn, questions, setQuestions}) => {
         setGameOn={setGameOn}
         questions={questions}
         setQuestions={setQuestions}>
-        </Game>}
+        </Game>}          
+        </div>
+        
 
 
         
