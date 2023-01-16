@@ -80,7 +80,7 @@
         .answer-btn { 
             width: 50%;
             height:35%; 
-            margin-left: 10rem;              
+            margin-left: 17rem;              
         }
         .quit-game {
             padding:0;
@@ -138,7 +138,9 @@
     .question-container {           
         font-size: 2rem;
     }
-        
+    .answer {
+        font-size: .35em!important;
+    }
     .answer-container {  
         position: absolute;
         left: -63%;   
