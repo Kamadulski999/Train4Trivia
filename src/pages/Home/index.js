@@ -13,7 +13,7 @@ const Home = ({ gameOn, setGameOn, questions, setQuestions}) => {
         <div className="banner neonText">
             Trivia Trainer</div>         
             {/* display the landing page modal */}
-        <div className="start-modal">
+        <div className="start-modal mt-2">
         {!gameOn && <Modal
         gameOn={gameOn}
         setGameOn={setGameOn}
