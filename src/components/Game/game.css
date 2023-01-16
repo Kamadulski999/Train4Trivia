@@ -60,11 +60,16 @@
 
 
     @media (max-width: 1333px) {
-        .answer-btn { 
-            width: 50%;
-            height:35%; 
-            margin-left: 17rem;              
+
+        .question-container {    
+            font-size: 5rem;
+            margin: 0 0 1em 2.5em;
         }
+
+        .answer-btn { 
+            height:35%;                     
+        }
+
         .quit-game {
             padding:0;
         }
@@ -75,7 +80,7 @@
 
 
 
-@media (max-width: 600px) {
+/* @media (max-width: 600px) {
     .question-counter {    
         font-size: 0.4em;      
     }
@@ -103,4 +108,4 @@
         position: absolute;
         left: -63%;   
     }      
-}
+} */

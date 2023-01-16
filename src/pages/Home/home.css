@@ -29,6 +29,7 @@
   {
     .container {
       background-image: url("/public/images/NeonBricks2.png");
+      background-size: 200vw;
     }
   }
 
